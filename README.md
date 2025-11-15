@@ -28,7 +28,7 @@ pip install -e habitat-baselines
 pip install -r requirements.txt # install other dependencies
 ```
 
-For other dependencies, see 
+For other dependencies, see socialnav-map.yaml.
 
 
 #### 3. **Downloading the Social-HM3D & Social-MP3D datasets**
@@ -61,27 +61,36 @@ The file structure should look like this:
 
 ```
 SocialNav-Map/
-└── data/
-    ├── datasets
-    │   └── pointnav
-    │       ├── social-hm3d
-    │       │   ├── train
-    │       │   │   ├── content
-    │       │   │   └── train.json.gz
-    │       │   └── val
-    │       │       ├── content
-    │       │       └── val.json.gz
-    │       └── social-mp3d
-    │           ├── train
-    │           │   ├── content
-    │           │   └── train.json.gz
-    │           └── val
-    │               ├── content
-    │               └── val.json.gz
-    ├── scene_datasets
-    ├── robots
-    ├── humanoids
-    ├── versoned_data
-    └── hab3_bench_assets
+└── Falcon/
+└── socialnav-map/
+    └── data/
+        ├── datasets
+        │   └── pointnav
+        │       ├── social-hm3d
+        │       │   ├── train
+        │       │   │   ├── content
+        │       │   │   └── train.json.gz
+        │       │   └── val
+        │       │       ├── content
+        │       │       └── val.json.gz
+        │       └── social-mp3d
+        │           ├── train
+        │           │   ├── content
+        │           │   └── train.json.gz
+        │           └── val
+        │               ├── content
+        │               └── val.json.gz
+        ├── scene_datasets
+        ├── robots
+        ├── humanoids
+        ├── versoned_data
+        └── hab3_bench_assets
+```
+
+### For Evaluation
+
+```
+cd socialnav-map
+python socialmap_hm3d.py --split val --eval 1 --auto_gpu_config 0 -n 1 --num_eval_episodes 400  --num_local_steps 10 --print_images 1  --exp_name ronghe_0.1 --eval_episodes 1087 --collect 0 --stop_th 494
 ```
 
