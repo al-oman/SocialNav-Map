@@ -1,0 +1,4 @@
+./tmp
+*.pth
+*.pyc
+**/__pycache__
