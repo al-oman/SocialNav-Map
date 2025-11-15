@@ -1,7 +1,40 @@
 # SocialNav-Map: Dynamic Mapping with Human Trajectory Prediction for Zero-Shot Social Navigation
 Repository for **SocialNav-Map: Dynamic Mapping with Human Trajectory Prediction for Zero-Shot Social Navigation**
 
-### Getting Started
+Social navigation in densely populated dynamic
+environments poses a significant challenge for autonomous mo-
+bile robots, requiring advanced strategies for safe interaction.
+Existing reinforcement learning (RL)-based methods require
+over 2000+ hours of extensive training and often struggle to
+generalize to unfamiliar environments without additional fine-
+tuning, limiting their practical application in real-world scenar-
+ios. To address these limitations, we propose SocialNav-Map,
+a novel zero-shot social navigation framework that combines
+dynamic human trajectory prediction with occupancy mapping,
+enabling safe and efficient navigation without the need for
+environment-specific training. Specifically, SocialNav-Map first
+transforms the task goal position into the constructed map co-
+ordinate system. Subsequently, it creates a dynamic occupancy
+map that incorporates predicted human movements as dynamic
+obstacles. The framework employs two complementary methods
+for human trajectory prediction: history prediction and orien-
+tation prediction. By integrating these predicted trajectories
+into the occupancy map, the robot can proactively avoid
+potential collisions with humans while efficiently navigating to
+its destination. Extensive experiments on the Social-HM3D and
+Social-MP3D datasets demonstrate that SocialNav-Map signifi-
+cantly outperforms state-of-the-art (SOTA) RL-based methods,
+which require 2,396 GPU hours of training. Notably, it reduces
+human collision rates by over 10% without necessitating any
+training in novel environments. By eliminating the need for
+environment-specific training, SocialNav-Map achieves superior
+navigation performance, paving the way for the deployment of
+social navigation systems in real-world environments charac-
+terized by diverse human behaviors. 
+
+![image](system.png)
+
+## Getting Started
 
 #### 1. **Preparing conda env**
 
@@ -87,10 +120,20 @@ SocialNav-Map/
         └── hab3_bench_assets
 ```
 
-### For Evaluation
+## For Evaluation
 
 ```
 cd socialnav-map
 python socialmap_hm3d.py --split val --eval 1 --auto_gpu_config 0 -n 1 --num_eval_episodes 400  --num_local_steps 10 --print_images 1  --exp_name ronghe_0.1 --eval_episodes 1087 --collect 0 --stop_th 494
 ```
 
+## Acknowledgement
+
+Our code is modified from [InstructNav](https://github.com/LYX0501/InstructNav) and [Falcon](https://raw.githubusercontent.com/Zeying-Gong/Falcon/65b88ccc7218190a24564d5ea3d989895c25b2c3/).
+Thanks for their open-set work.
+
+## BibTex
+Please cite our paper if you find it helpful :)
+```
+socialnav-map
+```
