@@ -135,5 +135,10 @@ Thanks for their open-set work.
 ## BibTex
 Please cite our paper if you find it helpful :)
 ```
-socialnav-map
+@article{zhang2025socialnav,
+  title={SocialNav-Map: Dynamic Mapping with Human Trajectory Prediction for Zero-Shot Social Navigation},
+  author={Zhang, Lingfeng and Xiao, Erjia and Hao, Xiaoshuai and Fu, Haoxiang and Gong, Zeying and Chen, Long and Liang, Xiaojun and Xu, Renjing and Ye, Hangjun and Ding, Wenbo},
+  journal={arXiv preprint arXiv:2511.12232},
+  year={2025}
+}
 ```
