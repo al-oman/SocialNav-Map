@@ -34,8 +34,8 @@ MP3D_CONFIG_PATH = "<YOUR SAVE PATH>/habitat-lab/habitat-lab/habitat/config/benc
 R2R_CONFIG_PATH = "/mnt/hpfs/baaiei/habitat/InstructNav_r2r_lf/habitat-lab-0.3.1/habitat-lab/habitat/config/benchmark/nav/vln_r2r.yaml"
 RXR_CONFIG_PATH = "/home/ubuntu/socialnav/InstructNav_r2r_lf/falcon_hm3d.yaml"
 # 添加 PointNav 配置路径
-POINTNAV_CONFIG_PATH = "/home/ubuntu/socialnav/Falcon/habitat-baselines/habitat_baselines/config/social_nav_v2/falcon_hm3d.yaml"
-POINTNAV_CONFIG_MP3D_PATH = "/home/ubuntu/socialnav/Falcon/habitat-baselines/habitat_baselines/config/social_nav_v2/falcon_mp3d.yaml"
+POINTNAV_CONFIG_PATH = "/home/ubuntu/VLA/socialnav-map2/socialnav-map/Falcon/habitat-baselines/habitat_baselines/config/social_nav_v2/falcon_hm3d.yaml"
+POINTNAV_CONFIG_MP3D_PATH = "/home/ubuntu/VLA/socialnav-map2/socialnav-map/Falcon/habitat-baselines/habitat_baselines/config/social_nav_v2/falcon_mp3d.yaml"
 
 def hm3d_config(path:str=HM3D_CONFIG_PATH,stage:str='val',episodes=200):
     habitat_config = habitat.get_config(path)
@@ -175,10 +175,10 @@ def pointnav_config(path:str=POINTNAV_CONFIG_PATH,stage:str='val',episodes=200):
     with read_write(habitat_config):
         habitat_config.habitat.dataset.split = stage
         # habitat_config.habitat.dataset.scenes_dir = "/mnt/hpfs/baaiei/habitat/VLN-CE/data/scene_datasets/mp3d"
-        habitat_config.habitat.dataset.scenes_dir = "/home/ubuntu/L3MVN/data/scene_datasets"
+        habitat_config.habitat.dataset.scenes_dir = "/home/ubuntu/VLA/matterport/data/scene_datasets"
         # habitat_config.habitat.dataset.data_path = "/home/ubuntu/socialnav/Falcon/data/datasets/pointnav/social-hm3d/{split}/{split}.json.gz"
         # habitat_config.habitat.simulator.scene_dataset = "/mnt/hpfs/baaiei/habitat/VLN-CE/data/scene_datasets/mp3d/mp3d.scene_dataset_config.json"
-        habitat_config.habitat.simulator.scene_dataset = "/home/ubuntu/L3MVN/data/scene_datasets/hm3d_v0.2/hm3d_basis.scene_dataset_config.json"
+        habitat_config.habitat.simulator.scene_dataset = "/home/ubuntu/VLA/matterport/data/scene_datasets/hm3d/hm3d_annotated_basis.scene_dataset_config.json"
         habitat_config.habitat.environment.iterator_options.num_episode_sample = episodes
         habitat_config.habitat.task.measurements.update(
         {

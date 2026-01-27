@@ -58,8 +58,16 @@ def init_vis_image(goal_name, legend):
     vis_image[530, 15:655] = color
     vis_image[530, 670:1150] = color
 
-    # draw legend
-    lx, ly, _ = legend.shape
-    vis_image[537:537 + lx, 155:155 + ly, :] = legend
+#     # draw legend
+#     lx, ly, _ = legend.shape
+#     vis_image[537:537 + lx, 155:155 + ly, :] = legend
+
+#     return vis_image
+    # draw legend (ONLY if available)
+    if legend is not None:
+        lx, ly, _ = legend.shape
+        vis_image[537:537 + lx, 155:155 + ly, :] = legend
+    else:
+        print("[WARN] Legend image is None — skipping legend rendering")
 
     return vis_image
