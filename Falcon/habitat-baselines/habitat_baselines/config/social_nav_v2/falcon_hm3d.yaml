@@ -30,7 +30,7 @@ habitat:
   gym:
     obs_keys: 
       - agent_0_articulated_agent_jaw_rgb # use it if add RGB camera
-      - agent_0_articulated_agent_jaw_depth
+      # - agent_0_articulated_agent_jaw_depth
       - agent_0_head_rgb_sensor
       - agent_0_head_depth_sensor
       - agent_0_pointgoal_with_gps_compass
@@ -97,7 +97,7 @@ habitat_baselines:
   video_dir: "evaluation/falcon/hm3d/video"
   test_episode_count: -1
   eval_ckpt_path_dir: "pretrained_model/falcon_noaux_25.pth"
-  num_environments: 8
+  num_environments: 1
   checkpoint_folder: "evaluation/falcon/hm3d/checkpoints"
   num_updates: -1
   total_num_steps: 1e8
@@ -114,7 +114,7 @@ habitat_baselines:
   eval:
     use_ckpt_config: False 
     should_load_ckpt: True
-    # video_option: ["disk"]
+    video_option: ["disk"]
 
   rl:
     agent:

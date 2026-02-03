@@ -1,0 +1,7 @@
+# notes on deployment
+
+- depth camera notes (Go2 doesn't have one):
+    - may need a realsense LiDAR to have depth 
+    - maybe use a cv program that estimates depth from RGB data
+    - investigate using existing L1 lidar pointcloud to generate depth image
+    - check cv library to maybe use a fusion of lidar and rgb to get depth image

@@ -2,3 +2,5 @@ numpy==1.23.5
 moviepy==1.0.3
 gitpython
 matplotlib
+scikit-fmm
+scikit-image

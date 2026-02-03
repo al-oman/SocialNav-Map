@@ -1,3 +1,13 @@
+# useful apparently
+import os
+os.environ["LD_PRELOAD"] = "/lib/x86_64-linux-gnu/libGLX_nvidia.so.0:/lib/x86_64-linux-gnu/libGLdispatch.so.0"
+os.environ["HABITAT_SIM_GL_BACKEND"] = "egl"
+os.environ["MAGNUM_GL_BACKEND"] = "egl"
+os.environ["MPLBACKEND"] = "Agg"
+
+print(os.environ["LD_PRELOAD"])
+
+
 import habitat
 import sys 
 sys.path.append('/mnt/hpfs/baaiei/habitat/InstructNav_r2r_lf')
@@ -276,7 +286,7 @@ if __name__ == "__main__":
     habitat_config = pointnav_config(stage='val',episodes=args.eval_episodes)
 
     # habitat_config = pointnav_config_mp3d(stage='val',episodes=args.eval_episodes)
-    print(habitat_config)
+    # print(habitat_config)
     # exit()
     habitat_env = habitat.Env(habitat_config)
     habitat_agent = HM3D_Objnav_Agent(habitat_env,args)
