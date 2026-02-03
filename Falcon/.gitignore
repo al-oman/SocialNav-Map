@@ -82,6 +82,9 @@ target/
 # exclude data from source control by default
 data
 
+# but include this specific data folder
+!habitat-baselines/il/data
+
 # Mac OS-specific storage files
 .DS_Store
 
